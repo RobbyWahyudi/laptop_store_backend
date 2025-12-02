@@ -15,7 +15,7 @@ import {
 // GET product by ID
 export async function GET(request, { params }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const queryParams = getQueryParams(request);
     const type = queryParams.type || "laptop";
 
@@ -51,7 +51,7 @@ export async function PUT(request, { params }) {
       return errorResponse("Insufficient permissions", 403);
     }
 
-    const { id } = params;
+    const { id } = await params;
     const body = await getRequestBody(request);
     const type = body.type || "laptop";
 
@@ -96,7 +96,7 @@ export async function DELETE(request, { params }) {
       return errorResponse("Insufficient permissions", 403);
     }
 
-    const { id } = params;
+    const { id } = await params;
     const queryParams = getQueryParams(request);
     const type = queryParams.type || "laptop";
 
