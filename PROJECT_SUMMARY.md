@@ -153,7 +153,7 @@ laptop_store_backend/
 
 ## 🚀 API Endpoints
 
-**Total: 25+ endpoints**
+**Total: 27+ endpoints**
 
 ### Authentication (4)
 
@@ -171,11 +171,20 @@ laptop_store_backend/
 - DELETE /api/products/[id]
 - GET /api/products/low-stock
 
-### Transactions (4)
+### Categories (5)
+
+- GET /api/categories
+- POST /api/categories
+- GET /api/categories/[id]
+- PUT /api/categories/[id]
+- DELETE /api/categories/[id]
+
+### Transactions (5)
 
 - GET /api/transactions
 - POST /api/transactions
 - GET /api/transactions/[id]
+- PUT /api/transactions/[id]
 - DELETE /api/transactions/[id]
 - GET /api/transactions/today
 
@@ -244,17 +253,18 @@ laptop_store_backend/
 
 All endpoints return consistent JSON format:
 
-```json
+``json
 {
-  "success": true,
-  "message": "Operation successful",
-  "data": { ... }
+"success": true,
+"message": "Operation successful",
+"data": { ... }
 }
+
 ```
 
 Error responses:
 
-```json
+``json
 {
   "success": false,
   "message": "Error message",

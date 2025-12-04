@@ -19,6 +19,8 @@ export async function GET(request, { params }) {
     const queryParams = getQueryParams(request);
     const type = queryParams.type || "laptop";
 
+    console.log("GET Product - ID:", id, "Type:", type);
+
     let result;
     if (type === "laptop") {
       result = await LaptopService.getById(parseInt(id));
@@ -54,6 +56,8 @@ export async function PUT(request, { params }) {
     const { id } = await params;
     const body = await getRequestBody(request);
     const type = body.type || "laptop";
+
+    console.log("PUT Product - ID:", id, "Type:", type);
 
     let validation, result;
 
@@ -99,6 +103,8 @@ export async function DELETE(request, { params }) {
     const { id } = await params;
     const queryParams = getQueryParams(request);
     const type = queryParams.type || "laptop";
+
+    console.log("DELETE Product - ID:", id, "Type:", type);
 
     let result;
     if (type === "laptop") {

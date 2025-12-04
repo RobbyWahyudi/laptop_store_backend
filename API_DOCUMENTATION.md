@@ -209,6 +209,47 @@ Headers: { "Authorization": "Bearer <admin_token>" }
 GET /api/products/low-stock?threshold=10&type=all
 ```
 
+### Categories
+
+#### Get All Categories
+
+```
+GET /api/categories
+```
+
+#### Create Category (Admin Only)
+
+```
+POST /api/categories
+Headers: { "Authorization": "Bearer <admin_token>" }
+Body: {
+  "name": "gaming"
+}
+```
+
+#### Get Category by ID
+
+```
+GET /api/categories/[id]
+```
+
+#### Update Category (Admin Only)
+
+```
+PUT /api/categories/[id]
+Headers: { "Authorization": "Bearer <admin_token>" }
+Body: {
+  "name": "updated_category_name"
+}
+```
+
+#### Delete Category (Admin Only)
+
+```
+DELETE /api/categories/[id]
+Headers: { "Authorization": "Bearer <admin_token>" }
+```
+
 ### Transactions
 
 #### Create Transaction (Kasir/Admin)

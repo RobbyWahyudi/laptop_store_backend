@@ -44,6 +44,7 @@ export const LaptopService = {
   },
 
   async getById(id) {
+    // Ensure we're querying the correct table
     const { data, error } = await supabaseAdmin
       .from("laptops")
       .select("*, laptop_categories(name)")
@@ -105,6 +106,8 @@ export const LaptopService = {
   },
 
   async delete(id) {
+    console.log("LaptopService.delete called with ID:", id);
+    // Ensure we're deleting from the correct table
     const { data, error } = await supabaseAdmin
       .from("laptops")
       .delete()
@@ -112,6 +115,7 @@ export const LaptopService = {
       .select()
       .single();
 
+    console.log("LaptopService.delete result:", { data, error });
     return { data, error };
   },
 
@@ -183,6 +187,7 @@ export const AccessoryService = {
   },
 
   async getById(id) {
+    // Ensure we're querying the correct table
     const { data, error } = await supabaseAdmin
       .from("accessories")
       .select("*")
@@ -241,6 +246,8 @@ export const AccessoryService = {
   },
 
   async delete(id) {
+    console.log("AccessoryService.delete called with ID:", id);
+    // Ensure we're deleting from the correct table
     const { data, error } = await supabaseAdmin
       .from("accessories")
       .delete()
@@ -248,6 +255,7 @@ export const AccessoryService = {
       .select()
       .single();
 
+    console.log("AccessoryService.delete result:", { data, error });
     return { data, error };
   },
 

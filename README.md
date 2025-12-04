@@ -127,12 +127,23 @@ DELETE /api/products/[id]
 GET    /api/products/low-stock
 ```
 
+### Categories
+
+```
+GET    /api/categories
+POST   /api/categories
+GET    /api/categories/[id]
+PUT    /api/categories/[id]
+DELETE /api/categories/[id]
+```
+
 ### Transactions
 
 ```
 GET    /api/transactions
 POST   /api/transactions
 GET    /api/transactions/[id]
+PUT    /api/transactions/[id]
 DELETE /api/transactions/[id]  # Void transaction
 GET    /api/transactions/today
 ```
@@ -188,7 +199,7 @@ curl -X POST http://localhost:3000/api/transactions \
 
 ### Get AI Recommendations
 
-```bash
+```
 curl -X POST http://localhost:3000/api/ai/recommend-laptop \
   -H "Content-Type: application/json" \
   -d '{
