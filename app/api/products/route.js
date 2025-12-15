@@ -28,6 +28,10 @@ export async function GET(request) {
       result = await LaptopService.getAll(params);
     } else if (type === "accessory") {
       result = await AccessoryService.getAll(params);
+    } else if (type === "all") {
+      const laptops = await LaptopService.getAll(params);
+      const accessories = await AccessoryService.getAll(params);
+      result = { data: [...laptops.data, ...accessories.data] };
     } else if (type === "category") {
       result = await CategoryService.getAll();
     } else {
